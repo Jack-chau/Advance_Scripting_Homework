@@ -10,16 +10,16 @@ class Bread:
         return self.__name
 
     def get_price( self ):
-        return self.__price
+        return round( float( self.__price ) )
 
     def get_quantity( self ) :
-        return int( self.__total_quantity )
+        return round( int( self.__total_quantity ) )
     
     def get_sales( self ):
-        return float( self.__total_sales )
+        return round( float( self.__total_sales ) )
     
     def get_sales_no( self ):
-        return int( self.__total_sales_no )
+        return round( int( self.__total_sales_no ) )
     
     def compute_sales( self, quantity : float ):
         sales = self.__price * quantity
