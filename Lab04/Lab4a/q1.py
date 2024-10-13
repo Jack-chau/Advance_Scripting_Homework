@@ -20,7 +20,7 @@ class Shape( ):
         return Shape.__number_of_shapes
 
 class Circle( Shape ) :
-    def __init__( self, radius, name = "Circle") :
+    def __init__( self, radius : float, name = "Circle") :
         super().__init__( name )
         self.__radius = radius
     
@@ -41,19 +41,21 @@ class Rectangle( Shape ):
         self.__width = width
 
     def find_area( self ) :
-        return self.__length * self.__width
+        area = self.__length * self.__width
+        return area
     
     def find_perimeter( self ) :
-        return self.__length * 2 + self.__width * 2
+        perimeter = self.__length * 2 + self.__width * 2
+        return perimeter
     
     def display( self, end="" ):
         super( ).display( f"with area = {self.find_area():.2f}, perimeter = {self.find_perimeter():.2f}{end:s}" )
 
 class RightAngledTriangle( Shape ) :
     def __init__( self, base_lenght, height, name = "Right-angled Triangle" ):
+        super( ).__init__( name )
         self.__base_lenght = base_lenght
         self.__height = height
-        super( ).__init__( name )
 
     def find_area( self ) :
         return self.__base_lenght * self.__height / 2
@@ -66,22 +68,22 @@ class RightAngledTriangle( Shape ) :
         super().display(f"with area = {self.find_area():.2f}, perimeter = {self.find_perimeter():.2f}{end:s}")
 
 class Cylinder( Circle ) :
-    def __init__( self, radius, length, name = "Cylinder" ):
-        super().__init__( name, radius )
+    def __init__( self, radius : float, length : float, name = "Cylinder" ):
+        super().__init__(  radius, name )
         self.__length = length
 
     def find_area( self ) :
-        total_surface_area = ( super().find_area( ) * 2 ) + ( 2 * self.__length * super().find_perimeter() )
+        total_surface_area = ( super().find_area( ) * 2 ) + (self.__length * super().find_perimeter() )
         return total_surface_area
 
     def find_perimeter( self ):
         return super().find_perimeter() * self.__length
 
     def find_volume( self ):
-        return super().find_area() * self.__length
+        return super().find_area( ) * self.__length
     
     def display(self, end="" ) :
-        super().display( f", volume = {self.find_volume()}{end:s}" )
+        super().display( f", volume = {self.find_volume():.2f} {end:s}" )
 
 #You are NOT allowed to modify following codes
 if __name__=="__main__":
