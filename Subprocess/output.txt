@@ -1,0 +1,5 @@
+total 4
+drwxrwxrwx 1 jackchau jackchau 4096 Nov 17 07:11 .
+drwxrwxrwx 1 jackchau jackchau 4096 Nov 17 06:29 ..
+-rwxrwxrwx 1 jackchau jackchau    0 Nov 17 07:11 output.txt
+-rwxrwxrwx 1 jackchau jackchau  555 Nov 17 06:55 RunCommand.py
