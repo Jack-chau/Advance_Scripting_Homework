@@ -16,7 +16,7 @@ class BankAcct:
             print( f"{self.__name}, deposit of {self.__deposit_amount } from account {self.__id} is not successful" )
     def withdraw( self, withdraw_amount ):
         self.__withdraw_amount = withdraw_amount
-        if self.__withdraw_amount > 0 and  self.__balance > self.__withdraw_amount:
+        if self.__withdraw_amount > 0 and  self.__balance >= self.__withdraw_amount + self.service_charge():
             self.__balance -= self.__withdraw_amount
             print( f"Customer {self.__name} withdraw {self.__withdraw_amount} into account {self.__id} successfully, account balance is {self.__balance}" )
         else:
