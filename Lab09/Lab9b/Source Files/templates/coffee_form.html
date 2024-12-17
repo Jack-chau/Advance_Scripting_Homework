@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Required meta tags-->
+        <meta charset="utf-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <title>Coffee Shop Menu</title>
+    </head>
+    <body>
+        <div class="px-2 py-2">
+            <h1>Coffee Shop Menu</h1>
+            <form action="http://localhost:5000" method="post">
+                <div class="form-group px-3">
+                    <input type="radio" id="cappuccino" name="coffee" value="Cappuccino">
+                    <label for="cappuccino">Cappuccino $25.00</label><br>
+                    <input type="radio" id="espresso" name="coffee" value="Espresso">
+                    <label for="espresso">Espresso $20.00</label><br>
+                    <input type="radio" id="latte" name="coffee" value="Latte">
+                    <label for="latte">Latte $15.00</label><br>
+                    <input type="radio" id="mocha" name="coffee" value="Mocha">
+                    <label for="mocha">Mocha $30.00</label><br>
+                </div>
+                <label for="quantity">Quantity:</label><input type="text" id="quantity" name="quantity"/><br>
+                <h2>Options:</h2>
+                <div class="form-group px-3">
+                    <input type="checkbox" id="large" name="large" value="Large">
+                    <label for="large">Large Cup +$5.00</label><br>
+                    <input type="checkbox" id="cold" name="cold" value="Cole">
+                    <label for="cold">Cold +$3.00</label><br>
+                </div>
+                <input type="submit" name="action" value="Confirm Item"/><br><br>
+                <h2>Current Order</h2>
+                {% for order in current_sales_list %}
+                    {{order}}<br>
+                {%endfor%}
+                Current Sales Total: {{current_sales_total}}<br>
+
+                <input type="submit" name="action" value="Confirm Order"/><br>
+                <a href="http://localhost:5000/statistics">Show Statistics</a><br>
+            </form>
+        </div>
+        <!--jQuery first, then Proper.js, then Bootstrap JS-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous">
+        </script>
+    </body>
+</html>
